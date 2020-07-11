@@ -1,27 +1,34 @@
 <template>
-  <v-app>
-    <v-content>
-      <v-toolbar app>
-        <v-toolbar-title class="headline text-uppercase">
-          <span>Dustin R Thurston</span>
-          
-          <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
-        </v-toolbar-title>
-      </v-toolbar>
-      <router-view></router-view>
-    </v-content>
+  <v-app dark>
+      <app-navigation></app-navigation>
+      <v-main>
+        <v-container fluid style="padding: 0; height: 100%; width: 100%;">
+          <router-view></router-view>
+        </v-container>
+      </v-main>
+      <v-footer>
+        Footer things
+      </v-footer>
   </v-app>
 </template>
 
+<script>
+import AppNavigation from '@/components/AppNavigation'
+
+export default {
+  name: 'App',
+  components: {
+    AppNavigation
+  }
+}
+</script>
 
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  // color: #2c3e50;
 }
 
 #nav {
